@@ -23,15 +23,20 @@ public class MealOrderMgmtTest {
     public void addMealOrderTestFunction2() {
         MealOrderMgmt mgmt = new MealOrderMgmt();
 
-        mgmt.addMealOrder(new MealOrder(10));
-        int before = mgmt.getOrderCount();
-
         mgmt.addMealOrder(null);
-        int after = mgmt.getOrderCount();
+        int count = mgmt.getOrderCount();
 
-        assertEquals(before, after);
+        assertEquals(0, count);
     }
 
+    @Test
+    public void addMealOrderTestFunction3() {
+        MealOrderMgmt mgmt = new MealOrderMgmt();
+
+        mgmt.addMealOrder(new MealOrder(3));
+
+        assertNotEquals(0, mgmt.getOrderCount());
+    }
     // updateMealOrder tests
 
     @Test
