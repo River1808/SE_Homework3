@@ -11,12 +11,12 @@ public class MealOrderMgmtTest {
         MealOrderMgmt mgmt = new MealOrderMgmt();
 
         mgmt.addMealOrder(new MealOrder(1));
-        int before = mgmt.getOrderCount();
+        int before = mgmt.getOrderCount(); //order count should be 1
 
-        mgmt.addMealOrder(new MealOrder(2));
-        int after = mgmt.getOrderCount();
+        mgmt.addMealOrder(new MealOrder(2)); // adding another order
+        int after = mgmt.getOrderCount(); // order count should be 2 now
 
-        assertEquals(before + 1, after);
+        assertEquals(before + 1, after); // 2=2
     }
 
     @Test
